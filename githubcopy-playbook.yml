@@ -1,0 +1,35 @@
+---
+- name: Copy Playbooks
+  hosts: webservers
+  become: yes
+  tasks:
+  # Use copy module
+  - name: Drop in filebeat-config.yml
+    copy:
+     src: /etc/ansible/filebeat-config.yml
+     dest: /home/Tim_RedTeam/files/filebeat-config.yml
+  - name: Drop in filebeat-playbook.yml
+    copy:
+     src: /etc/ansible/filebeat-playbook.yml
+     dest: /home/Tim_RedTeam/files/filebeat-playbook.yml
+  - name: Drop in install-elk.yml
+    copy:
+     src: /etc/ansible/install-ELK.yml
+     dest: /home/Tim_RedTeam/files/install-elk.yml
+  - name: Drop in pentest.yml
+    copy:
+     src: /etc/ansible/pentest.yml
+     dest: /home/Tim_RedTeam/files/pentest.yml
+  - name: Drop in Ansible.cfg
+    copy:
+     src: /etc/ansible/ansible.cfg
+     dest: /home/Tim_RedTeam/files/ansible.cfg
+  - name: Drop in hosts
+    copy:
+     src: /etc/ansible/hosts
+     dest: /home/Tim_RedTeam/files/hosts
+  - name: Drop in githubcopy-playbook.yml
+    copy:
+     src: /etc/ansible/githubcopy-playbook.yml
+     dest: /home/Tim_RedTeam/files/githubcopy-playbook.yml
+
